@@ -10,6 +10,7 @@ import { json } from '@remix-run/node';
 import type { MetaFunction, LinksFunction, LoaderFunction } from '@remix-run/node';
 
 import GlobalStyles from "~/styles/global.css";
+import { ScrollToTopButton } from '~/components/ScrollToTopButton';
 
 export const meta: MetaFunction = () => {
   return { 
@@ -79,6 +80,7 @@ export default function App() {
         </div>
         <Outlet />
         <a className="skip-link screen-reader-text" href="#content">Skip to content</a>
+        <ScrollToTopButton />
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === 'development' && <LiveReload />}
