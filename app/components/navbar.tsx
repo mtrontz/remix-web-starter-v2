@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from '@remix-run/react';
 import { Popover, Transition } from '@headlessui/react'
 import {
   RiAtLine,
@@ -39,13 +40,13 @@ const NavigationBar = ({ className }: IAppProps) => {
       <div className="layout sticky top-0 z-10">
         <div className="mx-auto">
           <div className="flex h-16 items-center justify-between">
-            <a href="/" className="text-2xl font-black">
+            <Link to="/" className="text-2xl font-black">
               Simple Nav
-            </a>
+            </Link>
             <ul className="hidden space-x-4 md:flex">
               {Links.map((nav) => (
                 <li key={nav.title}>
-                  <a href={nav.path}>{nav.title}</a>
+                  <Link to={nav.path}>{nav.title}</Link>
                 </li>
               ))}
             </ul>

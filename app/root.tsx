@@ -14,9 +14,7 @@ import GlobalStyles from "~/styles/global.css";
 export const meta: MetaFunction = () => {
   return { 
     title: "New Remix App",
-    charSet: "utf-8",
     "color-scheme": "dark",
-    viewport: "width=device-width, initial-scale=1",
     "twitter:card": "summary",
     "og:title": "",
     "twitter:title": "",
@@ -77,7 +75,7 @@ export default function App() {
       </head>
       <body className="wrapper">
       <div className="corner">
-          <img src="/corner.svg" alt="Corner icon" />
+          <img src="/assets/corner.svg" alt="Corner icon" />
         </div>
         <Outlet />
         <a className="skip-link screen-reader-text" href="#content">Skip to content</a>

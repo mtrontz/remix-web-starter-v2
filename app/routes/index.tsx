@@ -9,6 +9,10 @@ import {
 import type { MetaFunction, LinksFunction, HeadersFunction } from '@remix-run/node';
 
 import IndexStyles from "~/styles/index.css";
+import CornerStyles from "~/styles/corner.css";
+
+import Layout from '~/components/layout';
+import NavigationBar from '~/components/navbar';
 
 export let headers: HeadersFunction = () => {
   return {
@@ -16,8 +20,16 @@ export let headers: HeadersFunction = () => {
   };
 }
 
+export let links: LinksFunction = () => {
+	return [
+    { rel: "stylesheet", href: IndexStyles },
+    { rel: "stylesheet", href: CornerStyles },
+	];
+};
+
 export default function Index() {
   return (
+    <Layout>
     <article className="wrapper">
 
       <section className="hero">
@@ -81,6 +93,7 @@ export default function Index() {
       </div>
 
     </article>
+    </Layout>
   );
 }
 
