@@ -8,6 +8,29 @@ const isLocalhost = Boolean(
     )
 );
 
+/**
+ * This ServiceWorker API interface represents the service worker registration. You register a service worker to control one or more pages that share the same origin.
+ * Available only in secure contexts.
+ 
+interface ServiceWorkerRegistration extends EventTarget {
+  readonly active: ServiceWorker | null;
+  readonly installing: ServiceWorker | null;
+  readonly navigationPreload: NavigationPreloadManager;
+  onupdatefound: ((this: ServiceWorkerRegistration, ev: Event) => any) | null;
+  readonly pushManager: PushManager;
+  readonly scope: string;
+  readonly updateViaCache: ServiceWorkerUpdateViaCache;
+  readonly waiting: ServiceWorker | null;
+  getNotifications(filter?: GetNotificationOptions): Promise<Notification[]>;
+  showNotification(title: string, options?: NotificationOptions): Promise<void>;
+  unregister(): Promise<boolean>;
+  update(): Promise<void>;
+  addEventListener<K extends keyof ServiceWorkerRegistrationEventMap>(type: K, listener: (this: ServiceWorkerRegistration, ev: ServiceWorkerRegistrationEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+  addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+  removeEventListener<K extends keyof ServiceWorkerRegistrationEventMap>(type: K, listener: (this: ServiceWorkerRegistration, ev: ServiceWorkerRegistrationEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+  removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+}
+*/
 type Config = {
   onSuccess?: (registration: ServiceWorkerRegistration) => void;
   onUpdate?: (registration: ServiceWorkerRegistration) => void;
