@@ -29,3 +29,7 @@ model Joke {
   name       String
   content    String
 }
+
+model Experiment {
+  id Int @id @default(autoincrement())
+}
