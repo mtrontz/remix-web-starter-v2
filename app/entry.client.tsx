@@ -20,7 +20,7 @@ if (window.requestIdleCallback) {
   // https://caniuse.com/requestidlecallback
   window.setTimeout(hydrate, 1);
 }
-sw.register();
+sw.unregister();
 
 // import { hydrate } from 'react-dom';
 // import { RemixBrowser } from '@remix-run/react';
